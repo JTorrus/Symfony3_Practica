@@ -1,0 +1,12 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Inici{% endblock %}
+
+{% block body %}
+<h1>INICI, selecciona una competició</h1>
+    <div class="container">
+        <a href="{{ path('app_champions_llistartemp') }}" class="btn btn-info">CHAMPIONS</a>
+        <a href="{{ path('app_copa_llistartemp') }}" class="btn btn-info">COPA</a>
+        <a href="{{ path('app_liga_llistartemp') }}" class="btn btn-info">LIGA</a>
+    </div>
+{% endblock %}

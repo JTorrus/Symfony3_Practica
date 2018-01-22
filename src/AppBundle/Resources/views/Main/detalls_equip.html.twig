@@ -1,0 +1,96 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Detalls Equip{% endblock %}
+
+{% block body %}
+<h1>{{ equip.nomEquip }}</h1>
+    <h2>
+        Plantell
+    </h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Nom</th>
+                <th>Cognom</th>
+                <th>Data naixement</th>
+                <th>Sou</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for jugador in jugadors %}
+            <tr>
+                <td>{{ jugador.nom }}</td>
+                <td>{{ jugador.cognom }}</td>
+                <td>{{ jugador.dataNaixement }}</td>
+                <td>{{ jugador.sou }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Partits com a local</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Equip local</th>
+                <th>Gols local</th>
+                <th>---</th>
+                <th>Gols visitant</th>
+                <th>Equip visitant</th>
+                <th>Temporada</th>
+                <th>Competicio</th>
+                <th>Accio</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for partit in partitsLocal %}
+            <tr>
+                <td>{{ partit.equipLocal.nomEquip }}</td>
+                <td>{{ partit.golslocal }}</td>
+                <td>---</td>
+                <td>{{ partit.golsvisitant }}</td>
+                <td>{{ partit.equipVisitant.nomEquip }}</td>
+                <td>{{ partit.temporada }}</td>
+                <td>{{ partit.competicio }}</td>
+                <td>
+                    <a href="" class="btn btn-normal">Edita</a>
+                    <a href="" class="btn btn-danger">Esborra</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <h2>Partits com a visitant</h2>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Equip local</th>
+            <th>Gols local</th>
+            <th>---</th>
+            <th>Gols visitant</th>
+            <th>Equip visitant</th>
+            <th>Temporada</th>
+            <th>Competicio</th>
+            <th>Accio</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for partit in partitsVisitant %}
+            <tr>
+                <td>{{ partit.equipLocal.nomEquip }}</td>
+                <td>{{ partit.golslocal }}</td>
+                <td>---</td>
+                <td>{{ partit.golsvisitant }}</td>
+                <td>{{ partit.equipVisitant.nomEquip }}</td>
+                <td>{{ partit.temporada }}</td>
+                <td>{{ partit.competicio }}</td>
+                <td>
+                    <a href="" class="btn btn-normal">Edita</a>
+                    <a href="" class="btn btn-danger">Esborra</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
