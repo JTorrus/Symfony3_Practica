@@ -1,0 +1,27 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}Champions{% endblock %}
+
+{% block body %}
+<h1>Llistat de temporades Champions</h1>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>
+                Temporades
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for partit in partits %}
+            <tr>
+                <th scope="row">
+                    <a href="{{ path('app_champions_llistarpartits', {'temp': partit.temporada}) }}">
+                        {{ partit.temporada }}
+                    </a>
+                </th>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
