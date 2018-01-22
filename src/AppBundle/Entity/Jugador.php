@@ -56,7 +56,11 @@ class Jugador
      */
     private $iDequip;
 
-
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equip", inversedBy="jugadors")
+     * @ORM\JoinColumn(name="IDequip", referencedColumnName="id")
+     */
+    private $equip;
     /**
      * Get id
      *
@@ -186,5 +190,23 @@ class Jugador
     {
         return $this->iDequip;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEquip()
+    {
+        return $this->equip;
+    }
+
+    /**
+     * @param mixed $equip
+     */
+    public function setEquip($equip)
+    {
+        $this->equip = $equip;
+    }
+
+
 }
 

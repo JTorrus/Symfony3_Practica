@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -35,6 +36,19 @@ class Equip
      */
     private $anyFundacio;
 
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Jugador", mappedBy="equip")
+     */
+    private $jugadors;
+
+    /**
+     * Equip constructor.
+     * @param $jugadors
+     */
+    public function __construct()
+    {
+        $this->jugadors = new ArrayCollection();
+    }
 
     /**
      * Get id
@@ -93,5 +107,23 @@ class Equip
     {
         return $this->anyFundacio;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getJugadors()
+    {
+        return $this->jugadors;
+    }
+
+    /**
+     * @param mixed $jugadors
+     */
+    public function setJugadors($jugadors)
+    {
+        $this->jugadors = $jugadors;
+    }
+
+
 }
 
