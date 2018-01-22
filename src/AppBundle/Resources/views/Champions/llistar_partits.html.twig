@@ -12,7 +12,6 @@
                 <th>---</th>
                 <th>Gols visitant</th>
                 <th>Equip visitant</th>
-                <th>Accio</th>
             </tr>
         </thead>
         <tbody>
@@ -30,10 +29,6 @@
                     <a href="{{ path('app_main_detallsequip', {'id': partit.equipVisitant.id}) }}">
                         {{ partit.equipVisitant.nomEquip }}
                     </a>
-                </td>
-                <td>
-                    <a href="" class="btn btn-normal">Edita</a>
-                    <a href="" class="btn btn-danger">Esborra</a>
                 </td>
             </tr>
         {% endfor %}
