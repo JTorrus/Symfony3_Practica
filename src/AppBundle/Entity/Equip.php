@@ -42,12 +42,23 @@ class Equip
     private $jugadors;
 
     /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Partit", mappedBy="equipLocal")
+     */
+    private $partitsLocal;
+
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\Partit", mappedBy="equipVisitant")
+     */
+    private $partitsVisitant;
+    /**
      * Equip constructor.
      * @param $jugadors
      */
     public function __construct()
     {
         $this->jugadors = new ArrayCollection();
+        $this->partitsLocal = new ArrayCollection();
+        $this->partitsVisitant = new ArrayCollection();
     }
 
     /**
@@ -124,6 +135,37 @@ class Equip
         $this->jugadors = $jugadors;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getPartitsLocal()
+    {
+        return $this->partitsLocal;
+    }
+
+    /**
+     * @param mixed $partitsLocal
+     */
+    public function setPartitsLocal($partitsLocal)
+    {
+        $this->partitsLocal = $partitsLocal;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPartitsVisitant()
+    {
+        return $this->partitsVisitant;
+    }
+
+    /**
+     * @param mixed $partitsVisitant
+     */
+    public function setPartitsVisitant($partitsVisitant)
+    {
+        $this->partitsVisitant = $partitsVisitant;
+    }
 
 }
 

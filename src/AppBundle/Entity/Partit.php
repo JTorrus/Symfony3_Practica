@@ -63,7 +63,17 @@ class Partit
      */
     private $iDequipVisitant;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equip", inversedBy="partitsLocal")
+     * @ORM\JoinColumn(name="IDequip_local", referencedColumnName="id")
+     */
+    private $equipLocal;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equip", inversedBy="partitsVisitant")
+     * @ORM\JoinColumn(name="IDequip_visitant", referencedColumnName="id")
+     */
+    private $equipVisitant;
     /**
      * Get id
      *
@@ -217,5 +227,39 @@ class Partit
     {
         return $this->iDequipVisitant;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getEquipLocal()
+    {
+        return $this->equipLocal;
+    }
+
+    /**
+     * @param mixed $equipLocal
+     */
+    public function setEquipLocal($equipLocal)
+    {
+        $this->equipLocal = $equipLocal;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEquipVisitant()
+    {
+        return $this->equipVisitant;
+    }
+
+    /**
+     * @param mixed $equipVisitant
+     */
+    public function setEquipVisitant($equipVisitant)
+    {
+        $this->equipVisitant = $equipVisitant;
+    }
+
+
 }
 
