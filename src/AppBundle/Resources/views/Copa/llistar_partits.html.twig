@@ -18,11 +18,19 @@
         <tbody>
         {% for partit in partits %}
             <tr>
-                <td><a href="">{{ partit.equipLocal.nomEquip }}</a></td>
+                <td>
+                    <a href="{{ path('app_main_detallsequip', {'id': partit.equipLocal.id}) }}">
+                        {{ partit.equipLocal.nomEquip }}
+                    </a>
+                </td>
                 <td>{{ partit.golslocal }}</td>
                 <td>---</td>
                 <td>{{ partit.golsvisitant }}</td>
-                <td>{{ partit.equipVisitant.nomEquip }}</td>
+                <td>
+                    <a href="{{ path('app_main_detallsequip', {'id': partit.equipVisitant.id}) }}">
+                        {{ partit.equipVisitant.nomEquip }}
+                    </a>
+                </td>
                 <td>
                     <a href="" class="btn btn-normal">Edita</a>
                     <a href="" class="btn btn-danger">Esborra</a>

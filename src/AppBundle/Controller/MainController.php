@@ -60,7 +60,7 @@ class MainController extends Controller
         $partitsvisitant = $equip->getPartitsVisitant();
 
         return $this->render('AppBundle:Main:detalls_equip.html.twig', array(
-            'equip' => $equip, 'jugadors' => $jugadors, 'partitslocal' => $partitslocal, 'partitsvisitant' => $partitsvisitant
+            'equip' => $equip, 'jugadors' => $jugadors, 'partitsLocal' => $partitslocal, 'partitsVisitant' => $partitsvisitant
         ));
     }
 
