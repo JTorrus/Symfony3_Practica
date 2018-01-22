@@ -49,7 +49,6 @@ class CrearPartitController extends Controller
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            /** @var Partit $partit */
             $partit = $form->getData();
             $partit->setIDequipLocal($partit->getEquipLocal()->getId());
             $partit->setIDequipVisitant($partit->getEquipVisitant()->getId());
@@ -59,6 +58,7 @@ class CrearPartitController extends Controller
             } else if ($partit->getGolslocal() < 0 || $partit->getGolsvisitant() < 0) {
                 echo "Els gols no poden ser negatius";
             } else {
+                echo "Partit creat correctament";
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($partit);
                 $em->flush();
