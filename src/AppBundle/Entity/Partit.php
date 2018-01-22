@@ -24,14 +24,14 @@ class Partit
     /**
      * @var int
      *
-     * @ORM\Column(name="temporada", type="integer", unique=true)
+     * @ORM\Column(name="temporada", type="integer")
      */
     private $temporada;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="competicio", type="string", length=255, unique=true)
+     * @ORM\Column(name="competicio", type="string", length=255)
      */
     private $competicio;
 
@@ -52,14 +52,14 @@ class Partit
     /**
      * @var int
      *
-     * @ORM\Column(name="IDequip_local", type="integer", unique=true)
+     * @ORM\Column(name="IDequip_local", type="integer")
      */
     private $iDequipLocal;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="IDequip_visitant", type="integer", unique=true)
+     * @ORM\Column(name="IDequip_visitant", type="integer")
      */
     private $iDequipVisitant;
 

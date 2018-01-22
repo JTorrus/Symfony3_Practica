@@ -52,7 +52,7 @@ class Jugador
     /**
      * @var int
      *
-     * @ORM\Column(name="IDequip", type="integer", unique=true)
+     * @ORM\Column(name="IDequip", type="integer")
      */
     private $iDequip;
 
