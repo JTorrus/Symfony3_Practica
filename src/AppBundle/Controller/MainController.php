@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 class MainController extends Controller
 {
     /**
-     * @Route("/inici")
+     * @Route("/")
      */
     public function iniciAction()
     {

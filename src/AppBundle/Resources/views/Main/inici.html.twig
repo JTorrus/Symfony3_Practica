@@ -3,10 +3,12 @@
 {% block title %}Inici{% endblock %}
 
 {% block body %}
-<h1>INICI, selecciona una competició</h1>
-    <div class="container">
-        <a href="{{ path('app_champions_llistartemp') }}" class="btn btn-info">CHAMPIONS</a>
-        <a href="{{ path('app_copa_llistartemp') }}" class="btn btn-info">COPA</a>
-        <a href="{{ path('app_liga_llistartemp') }}" class="btn btn-info">LIGA</a>
+    <h1>Selecciona una competició</h1>
+
+    <div class="btn-group" role="group" aria-label="...">
+        <a href="{{ path('app_champions_llistartemp') }}" class="btn btn-success">CHAMPIONS</a>
+        <a href="{{ path('app_copa_llistartemp') }}" class="btn btn-success">COPA</a>
+        <a href="{{ path('app_liga_llistartemp') }}" class="btn btn-success">LIGA</a>
+
     </div>
 {% endblock %}
