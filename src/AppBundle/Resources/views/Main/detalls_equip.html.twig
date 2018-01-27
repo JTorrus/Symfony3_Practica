@@ -54,14 +54,13 @@
                     </a>
                 </td>
                 <td>
-                    <a href="{{ path('app_copa_llistarpartits', {'temp': partit.temporada}) }}">
-                        {{ partit.temporada }}
-                    </a>
+                    {{ partit.temporada }}
                 </td>
                 <td>{{ partit.competicio }}</td>
                 <td>
                     <a href="{{ path('app_main_editarpartit', {'id': partit.id}) }}" class="btn btn-info">Editar</a>
-                    <a href="{{ path('app_main_esborrarpartit', {'id': partit.id}) }}" class="btn btn-danger">Esborrar</a>
+                    <a href="{{ path('app_main_esborrarpartit', {'id': partit.id}) }}"
+                       class="btn btn-danger">Esborrar</a>
                 </td>
             </tr>
         {% endfor %}
@@ -97,7 +96,8 @@
                 <td>{{ partit.competicio }}</td>
                 <td>
                     <a href="{{ path('app_main_editarpartit', {'id': partit.id}) }}" class="btn btn-info">Editar</a>
-                    <a href="{{ path('app_main_esborrarpartit', {'id': partit.id}) }}" class="btn btn-danger">Esborrar</a>
+                    <a href="{{ path('app_main_esborrarpartit', {'id': partit.id}) }}"
+                       class="btn btn-danger">Esborrar</a>
                 </td>
             </tr>
         {% endfor %}
