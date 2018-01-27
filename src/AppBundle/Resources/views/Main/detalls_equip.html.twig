@@ -48,8 +48,16 @@
                 <td>{{ partit.golslocal }}</td>
                 <td>---</td>
                 <td>{{ partit.golsvisitant }}</td>
-                <td>{{ partit.equipVisitant.nomEquip }}</td>
-                <td>{{ partit.temporada }}</td>
+                <td>
+                    <a href="{{ path('app_main_detallsequip', {'id': partit.equipVisitant.id}) }}">
+                        {{ partit.equipVisitant.nomEquip }}
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ path('app_copa_llistarpartits', {'temp': partit.temporada}) }}">
+                        {{ partit.temporada }}
+                    </a>
+                </td>
                 <td>{{ partit.competicio }}</td>
                 <td>
                     <a href="{{ path('app_main_editarpartit', {'id': partit.id}) }}" class="btn btn-info">Editar</a>
@@ -76,7 +84,11 @@
         <tbody>
         {% for partit in partitsVisitant %}
             <tr>
-                <td>{{ partit.equipLocal.nomEquip }}</td>
+                <td>
+                    <a href="{{ path('app_main_detallsequip', {'id': partit.equipLocal.id}) }}">
+                        {{ partit.equipLocal.nomEquip }}
+                    </a>
+                </td>
                 <td>{{ partit.golslocal }}</td>
                 <td>---</td>
                 <td>{{ partit.golsvisitant }}</td>
