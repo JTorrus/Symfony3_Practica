@@ -42,7 +42,7 @@ class CrearPartitController extends Controller
                     'Champions' => 'Champions',
                     'Liga' => 'Liga')
             ))
-            ->add("temporada", TextType::class)
+            ->add("temporada", IntegerType::class)
             ->add('search', SubmitType::class, array('label' => 'Crear', 'attr' => array('class' => 'btn btn-success')))
             ->getForm();
 
