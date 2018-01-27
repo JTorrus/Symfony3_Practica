@@ -128,4 +128,23 @@ class MainController extends Controller
             'form' => $form->createView()
         ));
     }
+
+    /**
+     * @Route("/esborrarPartit/{id}")
+     */
+    public function esborrarPartit($id, Request $request) {
+        $em = $this->getDoctrine()->getManager();
+        $partit = $em->getRepository('AppBundle:Partit')->find($id);
+
+        $em->remove($partit);
+        $em->flush();
+
+        $this->addFlash(
+            'notice',
+            'Partit esborrat correctament'
+        );
+
+        return $this->redirectToRoute('app_main_detallsequip');
+
+    }
 }
